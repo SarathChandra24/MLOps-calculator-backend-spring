@@ -4,6 +4,10 @@ on:
     branches:
       - main
       - master
+      - test
+      - develop
+      - feature/*
+
 jobs:
   build:
     runs-on: ubuntu-latest
