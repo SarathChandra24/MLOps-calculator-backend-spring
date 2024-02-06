@@ -22,7 +22,7 @@ jobs:
         id: tag_version
         uses: anothrNick/github-tag-action@1.64.0
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.TAG_TOKEN }}
           WITH_V: true
 
       - name: Create a GitHub release
