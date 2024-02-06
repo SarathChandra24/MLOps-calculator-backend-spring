@@ -4,6 +4,10 @@ on:
     branches:
       - main
       - master
+      - test
+      - develop
+      - feature/*
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,9 +24,9 @@ jobs:
         with:
           github_token: ${{ secrets.TAG_TOKEN }}
 
-      - name: Create a GitHub release
-        uses: ncipollo/release-action@v1
-        with:
-          tag: ${{ steps.tag_version.outputs.new_tag }}
-          name: Release ${{ steps.tag_version.outputs.new_tag }}
-          body: ${{ steps.tag_version.outputs.changelog }}
+      # - name: Create a GitHub release
+      #   uses: ncipollo/release-action@v1
+      #   with:
+      #     tag: ${{ steps.tag_version.outputs.new_tag }}
+      #     name: Release ${{ steps.tag_version.outputs.new_tag }}
+      #     body: ${{ steps.tag_version.outputs.changelog }}
